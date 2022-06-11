@@ -1,0 +1,10 @@
+Package: GCA_000005845.2_ASM584v2_genomic
+Type: Package
+Title: Virtual Cell Modelling
+Version: 1.1.0-beta
+Author: xieguigang
+Maintainer: xieguigang <xie.guigang@gcmodeller.org>
+Description: Escherichia coli str. K-12 substr. MG1655 virtual cell modelling.
+License: GPL3
+Encoding: UTF-8
+LazyData: true
