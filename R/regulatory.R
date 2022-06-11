@@ -1,3 +1,5 @@
+imports "bioseq.patterns" from "seqtoolkit";
+
 #' create all possible TFBS motifs
 #' 
 const motif_cluster = function(sites, export = "./") {
