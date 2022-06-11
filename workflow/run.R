@@ -8,6 +8,6 @@ workspace = list(
 );
 
 genbank_src = `${workspace$dir}/source/GCA_000005845.2_ASM584v2_genomic.gbff`;
-sites = extract_upstream(genbank_src);
+sites = extract_upstream(genbank_src, len = 200);
 
 write.fasta(sites, file = `${workspace$dir}/source/upstream_250bp.fasta`, lineBreak = 80, delimiter = "|");
