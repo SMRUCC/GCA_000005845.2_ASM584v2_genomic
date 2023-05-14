@@ -267,3 +267,92 @@ Call "write.fasta"(&genomics_seq, "file" <- "" & &workdir & "/source.fasta");
 Call "write.fasta"(&locis, "file" <- "" & &workdir & "/upstream_locis.fasta");
 Call "invisible"(NULL);
 }) has not been registered in the analysis context yet.
+[declare function '$extract_gene_table'(app, context) {
+    # function_internal
+    <in_memory> extract_gene_table: 
+Dim src As generic = &context["configs"]["src"];
+Dim gbk As generic = Call "read.genbank"(&src);
+Dim workdir As generic = Call WorkflowRender::"workspace"(&app);
+Dim verbose As generic = Call "as.logical"(Call "getOption"("verbose"));
+Dim upstream_size As NA = (&context["configs"]["up_len"] || 150);
+if (&verbose) then {
+    declare function '$if_closure_internal'() {
+    # function_internal
+    <in_memory> if_closure_internal: 
+Call "print"("app workspace for extract gene table:");
+Call "print"(&workdir);;
+}
+};
+Dim genomics_seq As generic = Call "origin.fasta"(&gbk);
+Dim genes As generic = Call "genome.genes"("genome" <- &gbk);
+Dim gene_ids As generic = [&genes]::&Synonym;
+Call "print"("get genes table:");
+Call "print"(&gene_ids);
+Call "print"("bp size for parse the gene upstream loci:");
+Call "str"(&upstream_size);
+Dim locis As generic = Call "lapply"(Call "lapply"(Call "upstream"(&genes, "length" <- &upstream_size), [l] -> &l, "names" <- &gene_ids), declare function '$<$anonymous_277025>'(loci, i) {
+    # function_internal
+    <in_memory> <$anonymous_277025>: 
+Dim fa As generic = Call "cut_seq.linear"(&genomics_seq, &loci, "doNtAutoReverse" <- True);
+Dim id As generic = &gene_ids[&i];
+<byref> "fasta.headers"(&fa) <- Call "append"(&id, [&fa]::&Headers);
+&fa;
+});
+if (&verbose) then {
+    declare function '$if_closure_internal'() {
+    # function_internal
+    <in_memory> if_closure_internal: 
+Call "print"("view upstream locis:");
+Call "print"(Call "fasta.titles"(&locis));;
+}
+};
+Call "write.csv"(&genes, "file" <- "" & &workdir & "/genes.csv");
+Call "write.PTT_tabular"(&gbk, "file" <- "" & &workdir & "/context.txt");
+Call "write.fasta"(&genomics_seq, "file" <- "" & &workdir & "/source.fasta");
+Call "write.fasta"(&locis, "file" <- "" & &workdir & "/upstream_locis.fasta");
+Call "invisible"(NULL);
+}] The app(declare function '$extract_gene_table'(app, context) {
+    # function_internal
+    <in_memory> extract_gene_table: 
+Dim src As generic = &context["configs"]["src"];
+Dim gbk As generic = Call "read.genbank"(&src);
+Dim workdir As generic = Call WorkflowRender::"workspace"(&app);
+Dim verbose As generic = Call "as.logical"(Call "getOption"("verbose"));
+Dim upstream_size As NA = (&context["configs"]["up_len"] || 150);
+if (&verbose) then {
+    declare function '$if_closure_internal'() {
+    # function_internal
+    <in_memory> if_closure_internal: 
+Call "print"("app workspace for extract gene table:");
+Call "print"(&workdir);;
+}
+};
+Dim genomics_seq As generic = Call "origin.fasta"(&gbk);
+Dim genes As generic = Call "genome.genes"("genome" <- &gbk);
+Dim gene_ids As generic = [&genes]::&Synonym;
+Call "print"("get genes table:");
+Call "print"(&gene_ids);
+Call "print"("bp size for parse the gene upstream loci:");
+Call "str"(&upstream_size);
+Dim locis As generic = Call "lapply"(Call "lapply"(Call "upstream"(&genes, "length" <- &upstream_size), [l] -> &l, "names" <- &gene_ids), declare function '$<$anonymous_277025>'(loci, i) {
+    # function_internal
+    <in_memory> <$anonymous_277025>: 
+Dim fa As generic = Call "cut_seq.linear"(&genomics_seq, &loci, "doNtAutoReverse" <- True);
+Dim id As generic = &gene_ids[&i];
+<byref> "fasta.headers"(&fa) <- Call "append"(&id, [&fa]::&Headers);
+&fa;
+});
+if (&verbose) then {
+    declare function '$if_closure_internal'() {
+    # function_internal
+    <in_memory> if_closure_internal: 
+Call "print"("view upstream locis:");
+Call "print"(Call "fasta.titles"(&locis));;
+}
+};
+Call "write.csv"(&genes, "file" <- "" & &workdir & "/genes.csv");
+Call "write.PTT_tabular"(&gbk, "file" <- "" & &workdir & "/context.txt");
+Call "write.fasta"(&genomics_seq, "file" <- "" & &workdir & "/source.fasta");
+Call "write.fasta"(&locis, "file" <- "" & &workdir & "/upstream_locis.fasta");
+Call "invisible"(NULL);
+}) has not been registered in the analysis context yet.
