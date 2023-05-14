@@ -1,0 +1,65 @@
+[1] "Value can not match the type constraint!!! (list <--> closure)"
+[1] "Config the cellular graph network annotation & modelling workflow..."
+List of 3
+ $         : List of 2
+ ..$ symbol : chr "extract_gene_table"
+ ..$ value  : chr "object"
+
+ $ app     : <NULL>
+ $ context : <NULL>
+
+List of 3
+ $         : List of 2
+ ..$ symbol : chr "tfbs_motif_scanning"
+ ..$ value  : chr "object"
+
+ $ app     : <NULL>
+ $ context : <NULL>
+
+List of 3
+ $         : List of 2
+ ..$ symbol : chr "assemble_transcript_graph"
+ ..$ value  : chr "object"
+
+ $ app     : <NULL>
+ $ context : <NULL>
+
+List of 3
+ $         : List of 2
+ ..$ symbol : chr "assemble_metabolic_graph"
+ ..$ value  : chr "object"
+
+ $ app     : <NULL>
+ $ context : <NULL>
+
+[1] "pipeline modules to run in current workflow:"
+[1]	"extract_genbank_src" "extract_tfbs_motifs" "assemble_TRN"        "assemble_RXN"        
+[1] "workflow parameters:"
+List of 4
+ $ src        : chr "E:/GCA_000005845.2_ASM584v2_genomic/source/NC_000913.gb"
+ $ biocyc     : chr "F:/GCModeller/src/R-sharp/App/net6.0/biocyc"
+ $ up_len     : int 200
+ $ regprecise : chr "F:/GCModeller/src/R-sharp/App/net6.0/RegPrecise.Xml"
+
+[1] "app workspace for extract gene table:"
+[1]	"E:/GCA_000005845.2_ASM584v2_genomic/cellular_graph/tmp/.works/extract_genbank_src/" 
+[1]	""b0149" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
+[1]	""b0470" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
+[1]	""b0484" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
+[1]	""b1120" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
+[1]	""b1888" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
+[1]	""b2592" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
+[1]	""b3168" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
+[1]	""b4795" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
+[1]	""b4616" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
+[1]	""b4346" data was duplicated!"                                 
+[2]	"annotation.genomics.R#_interop::.genome.genes\[FeatureGenes]" 
