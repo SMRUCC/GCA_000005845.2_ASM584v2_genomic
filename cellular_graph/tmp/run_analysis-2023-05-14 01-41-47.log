@@ -1,0 +1,12 @@
+[1] "Value can not match the type constraint!!! (list <--> closure)"
+List of 3
+ $         : List of 2
+ ..$ symbol : chr "extract_gene_table"
+ ..$ value  : chr "object"
+
+ $ app     : <NULL>
+ $ context : <NULL>
+
+[1]	"the analysis application function required 2 parameters!" 
+[1] "workflow error:"
+[1]	"invalid function declare signature!" 
