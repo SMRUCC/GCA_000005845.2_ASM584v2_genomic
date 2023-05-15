@@ -14,3 +14,9 @@ motifs
 |> JSON::json_encode()
 |> writeLines(con = "./motifs.json")
 ;
+
+for(motif in motifs) {
+    bitmap(file = `./plots/${toString(motif)}.png`) {
+        plot(motif);
+    }
+}
