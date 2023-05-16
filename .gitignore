@@ -2,3 +2,11 @@
 workflow/seeds.pack
 test/LexA.pack
 workflow/seeds - Copy.pack
+cellular_graph/tmp/.works/extract_genbank_src/upstream_locis.fasta.ndb
+cellular_graph/tmp/.works/extract_genbank_src/upstream_locis.fasta.nhr
+cellular_graph/tmp/.works/extract_genbank_src/upstream_locis.fasta.nin
+cellular_graph/tmp/.works/extract_genbank_src/upstream_locis.fasta.njs
+cellular_graph/tmp/.works/extract_genbank_src/upstream_locis.fasta.not
+cellular_graph/tmp/.works/extract_genbank_src/upstream_locis.fasta.nsq
+cellular_graph/tmp/.works/extract_genbank_src/upstream_locis.fasta.ntf
+cellular_graph/tmp/.works/extract_genbank_src/upstream_locis.fasta.nto
